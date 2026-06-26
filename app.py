@@ -73,6 +73,32 @@ def open_website(website_name):
         webbrowser.open(websites[website_name])
         return"opening" +website_name
     return "I know google,youtube,facebook,chatgpt,gamil"
+def show_note():
+    notes=read_lines_from_file(NOTES_FILE)
+    if len(notes)==0:
+        return "no notes saved yet.Example :note buy milk"
+    result="your note:\n"
+    number=1
+    for note in notes:
+        result=result+str(number)+"."+notes+"\n"
+        number=number+1
+    return result
+def show_task():
+    tasks=read_lines_from_file(TASKS_FILE)
+    if len(tasks)==0:
+        return "No task yet.Example add task finish homework"
+    result="your task /n"
+    number = 1
+    for task in tasks:
+        result = result + str(number) + ". " + task + "\n"
+        number = number + 1
+
+    return result
+def mark_task_done(task_number_text):
+    if not task_number_text.isdigit():
+        return "task number deo.Example done task 1"
+
+
 
     
     
